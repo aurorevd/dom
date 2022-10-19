@@ -26,6 +26,11 @@ body{
   background-color: orange;
 }
 
+.blanc{
+  background-color: #FFFFFF;
+}
+
+
 .actionsquare-wrapper, .displayedsquare-wrapper{
   display: flex;
   flex-wrap: wrap;
