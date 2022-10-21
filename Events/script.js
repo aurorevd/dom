@@ -40,6 +40,7 @@ if (f.target.parentElement.classList.contains( 'actionsquare-wrapper' )&& f.targ
      { const dupvert = document.createElement (`div`);
       dupvert.className=("actionsquare green");;
       section1.appendChild(dupvert); 
+      dupvert.addEventListener('click', ecran ); 
       }
       else
       {vert1.className=("actionsquare green");
@@ -53,6 +54,7 @@ else if (f.target.parentElement.classList.contains( 'actionsquare-wrapper' )&& f
       const dupvioletcls = ["actionsquare", "violet"];
       dupviolet.classList.add(...dupvioletcls);
       section1.appendChild(dupviolet); 
+      dupviolet.addEventListener('click', ecran );
       }
     else
       {
@@ -67,6 +69,7 @@ else if (f.target.parentElement.classList.contains( 'actionsquare-wrapper' )&& f
       const duporangecls = ["actionsquare", "orange"];
       duporange.classList.add(...duporangecls);
       section1.appendChild(duporange); 
+      duporange.addEventListener('click', ecran );
       }
       else
       {
@@ -137,4 +140,21 @@ for (let actionSquare of actionSquares) {
 
 
 
+document.addEventListener('keyup', event => {
+  if ( 
+    event.key == " " ||
+    event.code === 'Space' ) 
+  {
+    let r = Math.floor(Math.random() * 255); 
+    let g = Math.floor(Math.random() * 255); 
+    let b = Math.floor(Math.random() * 255);  
+    const randomColor=(r,g,b);
+    const body=document.querySelector("body");
+    body.style.background = 'rgb('+ r +','+ g +' , '+ b +')'; 
+    const lispacebar = document.createElement (`li`);
+    ul.appendChild(lispacebar);
+    const textlispacebar = document.createTextNode( "Created a new background" + " "+'rgb('+ r +','+ g +','+ b +')');
+    lispacebar.appendChild(textlispacebar); 
+  }
+});
 
